@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VESTO</title>
+    <link rel="stylesheet" href="./libraries/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://use.fontawesome.com/5b4025bff4.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">VESTO</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="dishes.html">Dishes</a></li>
+                    <li class="active"><a href="chefs.html">Chefs</a></li>
+                    <li><a href="tasks.html">Tasks</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div id="main-content">
+        <div class="container">
+            <!-- Alert -->
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2" id="alert-message">
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content" style="background: rgba(255,255,255,0.9); padding: 10px 10px 5px 10px">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title" style="color:#5E5F5B;"><span class="fa fa-pencil"></span> Edit Chef</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group row">
+                                <form id="edit-chef-form">
+                                    <div class="col-md-12" style="margin-bottom: 5px">
+                                        <input class="form-control" name="name" type="text">
+                                    </div>
+                                    <div class="col-md-12" style="margin-bottom: 5px">
+                                        <select class="form-control" name="position">
+                                            <option value="" disabled selected>Select position</option>
+                                            <option value="Chef de cuisine">Chef de cuisine</option>
+                                            <option value="Sous-chef">Sous-chef</option>
+                                            <option value="Chef de partie">Chef de partie</option>
+                                            <option value="Commis (Chef) / Range chef">Commis (Chef) / Range chef</option>
+                                            <option value="Brigade system titles">Brigade system titles</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12" style="margin-bottom: 5px">
+                                        <input class="form-control" name="image" type="text">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" id="process-edit-chef" onclick="processEditData(this,event)" class="btn btn-warning btn-block">Edit Chef</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Customer list -->
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1" style="background: rgba(50,50,50,0.2); padding: 20px 20px 20px 20px">
+                    <h1><span class="fa fa-users"></span> CHEF LIST</h1>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="background: rgba(0,0,0,0.1); padding: 20px 20px 5px 20px">
+                            <div class="form-group row">
+                                <form id="add-chef-form">
+                                    <div class="col-md-12" style="margin-bottom: 5px">
+                                        <input class="form-control" name="name" type="text" placeholder="Enter name">
+                                    </div>
+                                    <div class="col-md-12" style="margin-bottom: 5px">
+                                        <select class="form-control" name="position">
+                                            <option value="" disabled selected>Select position</option>
+                                            <option value="Chef de cuisine">Chef de cuisine</option>
+                                            <option value="Sous-chef">Sous-chef</option>
+                                            <option value="Chef de partie">Chef de partie</option>
+                                            <option value="Commis (Chef) / Range chef">Commis (Chef) / Range chef</option>
+                                            <option value="Brigade system titles">Brigade system titles</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12" style="margin-bottom: 5px">
+                                        <input class="form-control" name="image" type="text" placeholder="Enter image URL">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-info btn-block"><span class="fa fa-plus"></span> Add Chef</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="chef-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./libraries/jquery-3.1.1.min.js"></script>
+<script src="./libraries/bootstrap.min.js"></script>
+<script type="text/javascript" src="./javascripts/script.chefs.js"></script>
+
+</html>
